@@ -3,13 +3,35 @@ import EthIcon from "../../assets/image/EthIcon.svg";
 const HomeItemStyle = styled.div`
   width: 80%;
   margin-right: 15px;
+  background: #ffffff;
+  border-radius: 14px;
+  @media (max-width: 1240px) {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  @media (max-width: 360px) {
+    & > div > .flex {
+      justify-content: flex-end !important;
+      & > .icon {
+        display: none !important;
+      }
+      & > p.number {
+        font-size: 30px !important;
+      }
+    }
+  }
+
   &:last-child {
     margin-right: 0;
   }
-  background: #ffffff;
-  border-radius: 14px;
+
   & > div:not(& > .line) {
     padding: 11px 28px;
+    height: 60%;
+    overflow-y: hidden;
+    & > p.number > img {
+      margin-right: 12px;
+    }
   }
   & > div > .flex {
     margin-bottom: 10px;

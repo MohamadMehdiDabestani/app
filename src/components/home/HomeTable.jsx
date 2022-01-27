@@ -3,6 +3,9 @@ import EthSmall from "../../assets/image/EthSmall.svg";
 import Up from "../../assets/image/up.svg";
 import Eye from "../../assets/image/eye.svg";
 import HomeTableHead from "./HomeTableHead";
+import Dialog from "../common/Dialog";
+import Button from "../common/Button";
+import { Fragment } from "react";
 const ItemTableStyle = styled.tr`
   border-bottom: 1px solid #ebeff2;
   img.eth {
@@ -15,12 +18,14 @@ const ItemTableStyle = styled.tr`
 
 const HomeTableStyle = styled.div`
   background: #fff;
+  overflow-x: scroll;
   box-shadow: 0px 12.6698px 22.5241px rgba(208, 210, 218, 0.15);
   border-radius: 14.0776px;
   padding-top: 23px;
   table {
     width: 100%;
   }
+
   th {
     background: #fbfbfb;
     font-family: Open Sans;
@@ -50,40 +55,56 @@ const HomeTableStyle = styled.div`
     padding: 0 10px;
   }
 `;
+const PaginationStyle = styled.div`
+  margin-top: 20px;
+  text-align: center;
+  button {
+    margin: 0 10px;
+  }
+`;
 const HomeTable = () => {
   return (
-    <HomeTableStyle>
-      <HomeTableHead />
-      <table>
-        <tr>
-          <th>Amount</th>
-          <th>Reward</th>
-          <th>Yearly Growth</th>
-          <th>Status</th>
-          <th>Duration</th>
-          <th>Actions</th>
-        </tr>
-        {Array.from({ length: 5 }).map((_, idx) => (
-          <ItemTableStyle key={idx}>
-            <td>
-              <img className="eth" src={EthSmall} /> 32.00
-            </td>
-            <td>
-              <img className="eth" src={EthSmall} /> 0.00781.000...{" "}
-              <img src={Up} alt="" />
-            </td>
-            <td>17.18%</td>
-            <td>
-              <span className="staking">STAKING</span>
-            </td>
-            <td>123 days left on billing balance</td>
-            <td>
-              <img src={Eye} />
-            </td>
-          </ItemTableStyle>
+    <Fragment>
+      <HomeTableStyle>
+        <HomeTableHead />
+        <table>
+          <tr>
+            <th>Amount</th>
+            <th>Reward</th>
+            <th>Yearly Growth</th>
+            <th>Status</th>
+            <th>Duration</th>
+            <th>Actions</th>
+          </tr>
+          {Array.from({ length: 5 }).map((_, idx) => (
+            <ItemTableStyle key={idx}>
+              <td>
+                <img className="eth" src={EthSmall} /> 32.00
+              </td>
+              <td>
+                <img className="eth" src={EthSmall} /> 0.00781.000...{" "}
+                <img src={Up} alt="" />
+              </td>
+              <td>17.18%</td>
+              <td>
+                <span className="staking">STAKING</span>
+              </td>
+              <td>123 days left on billing balance</td>
+              <td>
+                <img src={Eye} />
+              </td>
+            </ItemTableStyle>
+          ))}
+        </table>
+      </HomeTableStyle>
+      <PaginationStyle>
+        {Array.from({ length: 4 }).map((_, idx) => (
+          <Button>{(idx += 1)}</Button>
         ))}
-      </table>
-    </HomeTableStyle>
+        ...
+        <Button>43</Button>
+      </PaginationStyle>
+    </Fragment>
   );
 };
 

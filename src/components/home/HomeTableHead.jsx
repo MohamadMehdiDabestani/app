@@ -1,5 +1,8 @@
+import { useContext} from "react";
 import styled from "styled-components";
+import Context from "../../context/Context";
 import Button from "../common/Button";
+import Dialog from "../common/Dialog";
 const HomeTableHeadStyle = styled.div`
   display: flex;
   padding: 0 12px;
@@ -16,10 +19,15 @@ const HomeTableHeadStyle = styled.div`
 `;
 
 const HomeTableHead = () => {
+  const { setShowDialog } = useContext(Context);
+
   return (
     <HomeTableHeadStyle>
+      
       <p>Your Validators</p>
-      <Button big>Deposit</Button>
+      <Button onClick={() => setShowDialog(true)} big>
+        Deposit
+      </Button>
     </HomeTableHeadStyle>
   );
 };

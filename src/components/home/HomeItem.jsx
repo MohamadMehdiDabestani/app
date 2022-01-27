@@ -5,7 +5,11 @@ import Racket from "../../assets/image/Racket.svg";
 import HomeItemChildren from "./HomeItemChildren";
 const HomeItemStyle = style.div`
     display:flex;
-    margin-bottom: 13px
+    margin-bottom: 13px;
+    @media (max-width: 1240px) {
+      flex-direction: column;
+    }
+    overflow-x: hidden;
 `;
 const items = [
   {

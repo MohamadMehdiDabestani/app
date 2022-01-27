@@ -19,6 +19,11 @@ const HeadHomeStyle = styled.div`
     line-height: 15px;
     color: #292929;
   }
+  @media (max-width: 960px) {
+    button {
+      display: none
+    }
+  }
 `;
 const ArrowStyle = styled.img`
   margin-left: 10px;
@@ -28,7 +33,7 @@ const HeadHome = () => {
     <HeadHomeStyle>
       <div>
         <p>Solo</p>
-        <p>A staking fee will be deducted monthly from your billing account</p>
+        <p>A staking fee will be deducted monthly from  your billing account</p>
       </div>
       <Button>
         Connect Wallet
