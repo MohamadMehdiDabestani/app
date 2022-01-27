@@ -44,6 +44,9 @@ const HomeTableStyle = styled.div`
   td > p {
     display: flex;
   }
+  .up {
+    margin-left: 4px;
+  }
   .staking {
     background: #e6fffb;
     border: 1px solid #87e8de;
@@ -90,7 +93,7 @@ const HomeTable = () => {
               <td>
                 <p>
                   <img className="eth" src={EthSmall} /> 0.00781.000...
-                  <img src={Up} alt="" />
+                  <img src={Up} className="up" alt="" />
                 </p>
               </td>
               <td>17.18%</td>
