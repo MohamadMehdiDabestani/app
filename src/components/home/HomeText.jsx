@@ -19,9 +19,14 @@ const HeadHomeStyle = styled.div`
     line-height: 15px;
     color: #292929;
   }
+  button {
+    display: flex;
+    font-size: 16px;
+    align-items: center;
+  }
   @media (max-width: 960px) {
     button {
-      display: none
+      display: none;
     }
   }
 `;
@@ -33,7 +38,7 @@ const HeadHome = () => {
     <HeadHomeStyle>
       <div>
         <p>Solo</p>
-        <p>A staking fee will be deducted monthly from  your billing account</p>
+        <p>A staking fee will be deducted monthly from your billing account</p>
       </div>
       <Button>
         Connect Wallet

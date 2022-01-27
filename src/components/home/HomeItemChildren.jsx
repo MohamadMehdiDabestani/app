@@ -11,12 +11,12 @@ const HomeItemStyle = styled.div`
   }
   @media (max-width: 360px) {
     & > div > .flex {
-      justify-content: flex-end !important;
-      & > .icon {
-        display: none !important;
-      }
       & > p.number {
-        font-size: 30px !important;
+        font-size: 25px !important;
+        img {
+          width: 25px;
+          height: 25px;
+        }
       }
     }
   }

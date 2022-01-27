@@ -5,17 +5,18 @@ import HomeTable from "./HomeTable";
 import { useContext } from "react";
 import Context from "../../context/Context";
 const HomeStyle = styled.div`
-  width: 77%;
+  width: 80%;
+  margin-left: 20%;
   display: inline-block;
   float: right;
-  padding-right: 28px;
-  padding-left: 14px;
+  padding: 0 14px;
   position: relative;
   overflow-y: ${(props) => (props.showDialog ? "hidden" : "unset")};
   @media (max-width: 960px) {
     width: 100%;
     padding-right: 0;
-    padding-left:  0;
+    margin-left: 0%;
+    padding-left: 0;
   }
 `;
 

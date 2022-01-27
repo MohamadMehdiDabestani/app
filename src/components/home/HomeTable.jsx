@@ -20,7 +20,7 @@ const HomeTableStyle = styled.div`
   background: #fff;
   overflow-x: scroll;
   box-shadow: 0px 12.6698px 22.5241px rgba(208, 210, 218, 0.15);
-  border-radius: 14.0776px;
+  border-radius: 0 0 14.0776px;
   padding-top: 23px;
   table {
     width: 100%;
@@ -41,6 +41,9 @@ const HomeTableStyle = styled.div`
     text-align: left;
     padding: 16px;
   }
+  td > p {
+    display: flex;
+  }
   .staking {
     background: #e6fffb;
     border: 1px solid #87e8de;
@@ -56,7 +59,8 @@ const HomeTableStyle = styled.div`
   }
 `;
 const PaginationStyle = styled.div`
-  margin-top: 20px;
+  margin: 20px 0;
+  padding-bottom: 30px;
   text-align: center;
   button {
     margin: 0 10px;
@@ -65,8 +69,8 @@ const PaginationStyle = styled.div`
 const HomeTable = () => {
   return (
     <Fragment>
+      <HomeTableHead />
       <HomeTableStyle>
-        <HomeTableHead />
         <table>
           <tr>
             <th>Amount</th>
@@ -79,11 +83,15 @@ const HomeTable = () => {
           {Array.from({ length: 5 }).map((_, idx) => (
             <ItemTableStyle key={idx}>
               <td>
-                <img className="eth" src={EthSmall} /> 32.00
+                <p>
+                  <img className="eth" src={EthSmall} /> 32.00
+                </p>
               </td>
               <td>
-                <img className="eth" src={EthSmall} /> 0.00781.000...{" "}
-                <img src={Up} alt="" />
+                <p>
+                  <img className="eth" src={EthSmall} /> 0.00781.000...
+                  <img src={Up} alt="" />
+                </p>
               </td>
               <td>17.18%</td>
               <td>
@@ -98,7 +106,7 @@ const HomeTable = () => {
         </table>
       </HomeTableStyle>
       <PaginationStyle>
-        {Array.from({ length: 4 }).map((_, idx) => (
+        {Array.from({ length: 3 }).map((_, idx) => (
           <Button>{(idx += 1)}</Button>
         ))}
         ...

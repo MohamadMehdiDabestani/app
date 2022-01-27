@@ -1,11 +1,24 @@
-import { useContext} from "react";
+import { useContext } from "react";
 import styled from "styled-components";
 import Context from "../../context/Context";
 import Button from "../common/Button";
 import Dialog from "../common/Dialog";
 const HomeTableHeadStyle = styled.div`
   display: flex;
+  background: white;
   padding: 0 12px;
+  padding-top: 16px;
+  button {
+    font-size: 16px;
+  }
+  
+  @media (max-width: 375px) {
+    button {
+      font-size: 13px;
+    }
+  }
+
+  border-radius: 14.0776px 14.0776px 0 0;
   align-items: center;
   justify-content: space-between;
   p {
@@ -23,7 +36,6 @@ const HomeTableHead = () => {
 
   return (
     <HomeTableHeadStyle>
-      
       <p>Your Validators</p>
       <Button onClick={() => setShowDialog(true)} big>
         Deposit

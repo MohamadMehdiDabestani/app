@@ -3,6 +3,7 @@ import DialogHighlight from "./DialogHighlight";
 import Button from "./Button";
 import { Fragment, useContext, useState } from "react";
 import Context from "../../context/Context";
+import CloseIcon from "../../assets/image/CloseIconDialog.svg";
 const DialogStyle = styled.div`
   align-items: center;
   justify-content: center;
@@ -75,7 +76,11 @@ const DialogStyle = styled.div`
       }
     }
   }
-
+  img {
+    place-self: self-end;
+    margin-bottom: 35px;
+    margin-right: 35px;
+  }
   @media (max-width: 820px) {
     & > .box {
       button {
@@ -119,6 +124,7 @@ const Dialog = () => {
         <Fragment>
           <DialogBackgroundStyle onClick={() => setShowDialog(false)} />
           <DialogStyle>
+            <img src={CloseIcon} onClick={() => setShowDialog(false)} alt="" />
             <div className="box">
               <p className="title-dialog">stacking</p>
               <div className="inputs">

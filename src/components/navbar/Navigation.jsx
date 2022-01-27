@@ -4,7 +4,12 @@ import Solo from "../../assets/image/SoloIcon.svg";
 import Docs from "../../assets/image/DocsIcon.svg";
 import NavigationItem from "./NavigationItem";
 const NavigationStyle = styled.ul`
-  height: 78%;
+  min-height: 78%;
+  @media (max-width: 960px) {
+    min-height: 1%;
+    overflow: hidden;
+    margin-bottom: 94px;
+  }
 `;
 const items = [
   {
